@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="800; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+  <title>drag to rate</title>
+  <script src="../jquery-1.8.3.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+ 
+  <style>
+  .clear{ clear:both;}
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting {  }
+
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #selectable li { margin: 1px; padding: 0.4px; height: 38px; width:38px; float:left; }
+  #selectable li { text-indent:-999px; overflow:hidden; background-color:#666666;}
+  .selec{ background-color:red !important;}
+  
+  </style>
+  <script>
+  $(function() {
+    //$( "#selectable" ).selectable();
+	var chk = 0
+	
+	$('#selectable').bind('mousedown', function(event) { event.preventDefault() });
+	
+	$('body').mouseup(function(){
+		chk = 0;
+	})
+	$('#selectable li').mousedown(function(){
+		var myID = $(this).index();
+		chk = 1;
+		mDown(myID);
+	})
+	$('#selectable li').mouseup(function(){
+		chk = 0;
+	})
+	$('#selectable li').mouseenter(function(){
+		if(chk == 1){
+			var myID = $(this).index();
+			$('#selectable li').removeClass('selec');
+			for(var i=0;i<=myID;i++){
+				$('#selectable li').eq(i).addClass('selec');	
+			}
+		}
+	})
+	
+	function mDown(myID){
+		$('#selectable li').removeClass('selec');
+		for(var i=0;i<=myID;i++){
+			$('#selectable li').eq(i).addClass('selec');
+		}		
+	}
+  });
+  </script>
+</head>
+<body>
+ 
+<ol id="selectable">
+  <li class="ui-widget-content " id="test">1</li>
+  <li class="ui-widget-content">2</li>
+  <li class="ui-widget-content">3</li>
+  <li class="ui-widget-content">4</li>
+  <li class="ui-widget-content">5</li>
+  <li class="ui-widget-content">6</li>
+  <li class="ui-widget-content">7</li>
+</ol>
+
+<p>trace</p> 
+
+xxsx
+</body>
+</html>
