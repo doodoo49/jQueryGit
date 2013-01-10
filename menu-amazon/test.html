@@ -1,0 +1,96 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script src="../jquery-1.8.3.js" type="text/javascript"></script>
+<style>
+	body{ margin:0; padding:0;}
+	#main_nav{ list-style-type:none; margin:50px 0 0 2%; padding:0; width:150px; position:relative; display:block; height:200px; background-color:#99CCFF; }
+	#main_nav li{ /*float:left;*/ margin:0 0px 0 0px; /*background-color:pink;*/ /*border-bottom:1px solid gray;*/}
+	#main_nav li:hover .sub_nav{ }
+	.sub_nav{ background-color:#3FF; display:none; /*position:relative;*/ position:absolute; top:0px; left:150px; height:200px; width:300px;}
+	.sub_nav img{ position:absolute; bottom:0px; right:0px;}
+	.sub_nav ul{ list-style-type:none;  display:block;margin:0; padding:0; position:absolute;}
+	.sub_nav ul li{ float:none !important;margin:0 !important; padding:0 !important;  background-color:none !important; width:160px; border-bottom:none !important;}
+	#bg2{ right:-18px; bottom:-5px;}
+	
+	.clear{ clear:both; height:0;}
+</style>
+<script>
+	$(function(){
+		chkResize();
+		
+		$('#main_nav li').mouseenter(function(e) {
+            $(this).find('.sub_nav').stop().fadeIn("fast");
+			$(this).find('.sub_nav ul li div ul').css("display","none");
+        });	
+		$('#main_nav li').mouseleave(function(e) {
+            $(this).find('.sub_nav').stop().fadeOut("fast");
+        });	
+		$('.sub_nav ul li').mouseenter(function(e) {
+            $(this).find('.sub_navv').stop().fadeIn("fast");
+        });	
+		$('.sub_nav ul li').mouseleave(function(e) {
+            $(this).find('.sub_navv').stop().fadeOut("fast");
+        });	
+		$(window).resize(function() {
+		  chkResize();
+		});
+		
+		function chkResize(){
+			//if)
+		}
+	})
+</script>
+</head>
+
+<body>	
+	<ul id="main_nav">
+    	<li><a href="#">nav1</a></li>
+        <li><a href="#">nav2 >>>>>>>>>>>></a>
+        	<div class="sub_nav">
+            	<img src="bg1.png" id="bg2" />
+            	<ul>
+                  <li><a href="#">sub2_1 xxxxxxxxxxxxx</a></li>
+                  <li><a href="#">sub2_2 xxxxxxxxxx</a></li>
+                  <li><a href="#">sub2_3 xxxxxxxxxxxx</a></li>
+            	</ul>
+            </div>
+        </li>
+        <li><a href="#">nav3 >>>>>>>>>>>></a>
+        	<div class="sub_nav">
+            	<img src="bg2.png" id="bg3" />
+            	<ul>
+                	<li><a href="#">sub3_1</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">nav4 >>>>>>>>>>>></a>
+        	<div class="sub_nav">
+            	<img src="bg3.png" id="bg4"/>
+            	<ul>
+                  <li><a href="#">sub4_1</a></li>
+                  <li><a href="#">sub4_2</a></li>
+                  <li><a href="#">sub4_3</a></li>
+            	</ul>
+            </div>
+        </li>
+        <li><a href="#">nav5</a></li>
+        <li><a href="#">nav6</a></li>
+        <li><a href="#">nav7</a></li>
+        <li><a href="#">nav8</a></li>
+        <li><a href="#">nav9</a></li>
+        <li><a href="#">nav10</a></li>
+        <div class="clear"></div>
+    </ul>
+    <div class="clear"></div>
+	
+    <br />
+<br />
+<br />
+
+  
+</body>
+</html>
