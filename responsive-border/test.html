@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="../jquery-1.8.3.js"></script>
+<script>
+	$(function(){
+		responseBor();
+		
+		$(window).resize(function() {
+		  responseBor();
+		});
+		function responseBor(){
+			$('.borT').css('left',$('.corTL').width())
+			$('.borT').css('width',$('.border').width()-$('.corTL').width());
+			$('.borB').css('left',$('.corBL').width());
+			$('.borB').css('width',$('.border').width()-$('.corBL').width()-$('.corBR').width());
+			$('.borL').css('top',$('.corTL').height());
+			$('.borL').css('height',$('.border').height()-$('.corTL').height()-$('.corBL').height());
+			$('.borR').css('top',$('.corTR').height());
+			$('.borR').css('height',$('.border').height()-$('.corTR').height()-$('.corBR').height());
+		}
+	})
+</script>
+<style>
+	.border{ position:relative; width:100%;	}
+	.corTL{ background:url(imgs/cor-tl.gif); width:14px; height:16px; position:absolute; top:0; left:0;}
+	.corTR{ background:url(imgs/cor-tr.gif); width:10px; height:16px; position:absolute; top:0px; right:0px;}
+	.corBL{ background:url(imgs/cor-bl.gif); width:14px; height:14px; position:absolute; bottom:0px; left:0px;}
+	.corBR{ background:url(imgs/cor-br.gif); width:10px; height:14px; position:absolute; bottom:0px; right:0px;}
+	.borT{ background:url(imgs/bor-t.gif); height:16px; position:absolute; top:0px; }
+	.borB{ background:url(imgs/bor-b.gif); height:14px; position:absolute; bottom:0px; }
+	.borL{ background:url(imgs/bor-l.gif); width:14px; position:absolute; left:0px; }
+	.borR{ background:url(imgs/bor-r.gif); width:10px; position:absolute; right:0px; }
+	.content{ padding:20px;}
+</style>
+</head>
+
+<body>
+	<div class="border">
+    	<div class="borT"></div>
+        <div class="borB"></div>
+        <div class="borL"></div>
+        <div class="borR"></div>
+        <div class="corTL"></div>
+        <div class="corTR"></div>
+        <div class="corBL"></div>
+        <div class="corBR"></div>
+        
+    	<div class="content">
+        	content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content 
+        </div>
+    </div>
+</body>
+</html>
